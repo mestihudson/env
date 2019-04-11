@@ -10,11 +10,12 @@ set smartcase	    " Enable smart-case search
 set ignorecase	    " Always case-insensitive
 set incsearch	    " Searches for strings incrementally
 
-set autoindent	    " Auto-indent new lines
-set shiftwidth=4    " Number of auto-indent spaces
-set smartindent	    " Enable smart-indent
-set smarttab	    " Enable smart-tabs
-set softtabstop=4   " Number of spaces per Tab
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+let g:airline#extensions#tabline#enabled = 1
 
 "========================================================
 " Plugins
@@ -32,15 +33,14 @@ endif
 Plug 'scrooloose/nerdtree'
 Plug 'posva/vim-vue'
 Plug 'digitaltoad/vim-pug'
+Plug 'Yggdroot/indentLine'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "Themes
-Plug 'axvr/photon.vim'
-Plug 'maksimr/Lucius2'
-Plug 'fenetikm/falcon'
 Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
-set t_Co=256
 colorscheme codedark
 set cursorline
