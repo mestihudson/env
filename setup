@@ -23,9 +23,6 @@ sudo apt-get install -y curl
 sudo apt-get update
 sudo apt-get install -y git xclip
 
-# maven 
-sudo apt-get install maven -y
-
 # Vim 
 sudo apt-get install -y vim 
 sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -34,7 +31,8 @@ sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Tmux
 sudo apt-get install tmux
 
-# Zsh
+# Zsh e Ohmyzsh
+sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Docker
@@ -43,17 +41,3 @@ sh get-docker.sh
 
 # Docker-compose
 sudo pip install docker-compose
-
-# Nodejs and NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-source ~/.profile
-sudo nvm install 7.10.0
-sudo nvm use 7.10.0
-node -v
-
-# Angular FullStack - My favorite MEAN boilerplate (MEAN = MongoDB, Express, Angularjs, Nodejs)
-sudo npm install -g generator-angular-fullstack
-
-# Installing JDK and JRE
-sudo apt-get install -y default-jre
-sudo apt-get install -y default-jdk
