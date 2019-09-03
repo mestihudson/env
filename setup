@@ -35,6 +35,10 @@ sudo apt-get install tmux
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# FzF
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # Docker
 curl -fsSL get.docker.com -o get-docker.sh
 sh get-docker.sh
