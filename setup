@@ -31,13 +31,17 @@ sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Tmux
 sudo apt-get install tmux
 
-# Zsh e Ohmyzsh
+# Zsh e 
 sudo apt-get install zsh
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
+echo "exec zsh" >> ~/.bashrc
+
+#Ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # FzF
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+chmod +x ~/.fzf/install
 ~/.fzf/install
 
 # Docker
