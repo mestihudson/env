@@ -1,19 +1,59 @@
 #!/bin/bash
+# Sojharo's Development Machine Setup on Ubuntu
+# Author : Sojharo
+#
+# set software sources to server for united states
+#
+# For other software:
+## VLC from software center
+## virtual box from software center
+## PDF Mod from software center
+## shutter from software center
+## kazam from software center
+## install unity tweak tool from software center
+## install rebar: pull from github (for building erlang applications)
+## Learn from https://github.com/rafaelstz/simplesh
 
-sudo apt-get install curl
-sudo apt-get install git
-sudo apt-get install tmux
+sudo apt-get update
 
-#vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+# Curl
+sudo apt-get install -y curl
+
+# Git - a version control system
+sudo apt-get update
+sudo apt-get install -y git xclip
+
+# maven 
+sudo apt-get install maven -y
+
+# Vim 
+sudo apt-get install -y vim 
+sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Tmux
+sudo apt-get install tmux
 
-#Chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update 
-sudo apt-get install google-chrome-stable
+# Zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# Docker
+curl -fsSL get.docker.com -o get-docker.sh
+sh get-docker.sh
 
+# Docker-compose
+sudo pip install docker-compose
 
+# Nodejs and NVM
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+source ~/.profile
+sudo nvm install 7.10.0
+sudo nvm use 7.10.0
+node -v
+
+# Angular FullStack - My favorite MEAN boilerplate (MEAN = MongoDB, Express, Angularjs, Nodejs)
+sudo npm install -g generator-angular-fullstack
+
+# Installing JDK and JRE
+sudo apt-get install -y default-jre
+sudo apt-get install -y default-jdk
