@@ -1,22 +1,23 @@
-set -g prefix C-a
+##########################################################                                                                                                                                                                   
+###  Configuration                                                                                                                                                                            
+##########################################################                                                                                                                                                                  
+                                                                                                                                                                                              
+# Zsh as your default Tmux shell                                                                                                                                                              
+set-option -g default-shell /bin/zsh                                                                                                                                                          
+                                                                                                                                                                                              
+# Continuum                                                                                                                                                                                   
+set -g @continuum-restore 'on'                                                                                                                                                                
+set -g @resurrect-strategy-vim 'session'                                                                                                                                                      
+set -g @resurrect-capture-pane-contents 'on'                                                                                                                                                  
+set -g status-right 'Continuum status: #{continuum_status}'                                                                                                                                   
+set -g @continuum-save-interval '10'                                                                                                                                                          
 
-# tmux coloring
-# Set the status line's colors
-set -g status-fg white
-set -g status-bg black
-
-# Set the color of the window list
-setw -g window-status-fg cyan
-setw -g window-status-bg default
-setw -g window-status-attr dim
-
-# Set colors for the active window
-setw -g window-status-current-fg white
-setw -g window-status-current-bg red
-setw -g window-status-current-attr bright
-
-# Pane colors
-set -g pane-border-fg white
-set -g pane-border-bg black
-set -g pane-active-border-fg white
-set -g pane-active-border-bg colour240
+# List of plugins                                                                                                                                                                             
+set -g @plugin 'tmux-plugins/tpm'                                                                                                                                                             
+set -g @plugin 'tmux-plugins/tmux-sensible'                                                                                                                                                   
+                                                                                                                                                                                              
+set -g @plugin 'tmux-plugins/tmux-resurrect'                                                                                                                                                  
+set -g @plugin 'tmux-plugins/tmux-continuum'                                                                                                                                                  
+                                                                                                                                                                                              
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)                                                                                                             
+run -b '~/.tmux/plugins/tpm/tpm'  
