@@ -45,14 +45,6 @@ sudo apt-get install zsh -y
 sudo chsh -s $(which zsh)
 echo "exec zsh" >> ~/.bashrc
 
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-chmod +x ~/.fzf/install
-~/.fzf/install
-
 # docker
 cd /tmp
 curl -fsSL get.docker.com -o get-docker.sh
@@ -62,3 +54,11 @@ sh get-docker.sh
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+chmod +x ~/.fzf/install
+~/.fzf/install
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
