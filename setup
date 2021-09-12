@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-# Este script pode ser executado
+# este script pode ser executado
 # ou via curl:
 #   sh -c "$(curl -fsSL https://raw.github.com/mestihudson/env/master/setup)"
 # ou via wget:
@@ -8,16 +8,19 @@
 # ou via fetch:
 #   sh -c "$(fetch -o - https://raw.github.com/mestihudson/env/master/setup)"
 
-# Atualização do sistema
+# atualização
 sudo apt-get update
 sudo apt-get upgrade
 
-# Git - a version control system
+# curl
+sudo apt install -y curl
+
+# git
 sudo apt-get install -y git xclip
 
-# Instalação Webcam ROS
+# webcam ros
 # https://florisvanbreugel.wordpress.com/2018/04/10/accessing-mac-webcam-in-ros-running-ubuntu-on-the-mac/
-sudo apt install make -y
+sudo apt install make guvcview -y
 sudo mkdir -p /etc/local/src
 cd /etc/local/src
 sudo git clone https://github.com/patjak/bcwc_pcie.git
@@ -30,5 +33,32 @@ sudo install
 sudo depmod
 sudo modprobe -r bdc_pci
 sudo modprobe facetimehd
-sudo apt install guvcview -y
-guvcview
+
+# vim
+sudo apt install vim -y
+
+# tmux
+sudo apt install tmux -y
+
+# zsh
+sudo apt-get install zsh -y
+sudo chsh -s $(which zsh)
+echo "exec zsh" >> ~/.bashrc
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+chmod +x ~/.fzf/install
+~/.fzf/install
+
+# docker
+cd /tmp
+curl -fsSL get.docker.com -o get-docker.sh
+sh get-docker.sh
+
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
